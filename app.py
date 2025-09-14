@@ -53,8 +53,9 @@ low_balance_accounts = {k: v for k, v in current_balances_dict.items() if v < 85
 
 for high_acc, high_bal in high_balance_accounts.items():
     for low_acc, low_bal in low_balance_accounts.items():
-        suggested_amount = min(20000, high_bal - 90000)
-        st.info(f"Suggestion: Transfer ${suggested_amount} from {high_acc} to {low_acc}")
+        suggested_amount = max(0, min(20000, high_bal - 90000))
+        if suggested_amount > 0:
+            st.info(f"Suggestion: Transfer ${suggested_amount} from {high_acc} to {low_acc}")
         break  # limit to one suggestion per low account to avoid flooding
 
 # Optional: FX conversion suggestion (synthetic example)
