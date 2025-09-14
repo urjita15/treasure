@@ -48,8 +48,8 @@ for acc, bal in current_balances_dict.items():
 # -----------------------------
 st.subheader("Optimization Suggestions")
 
-high_balance_accounts = {k: v for k, v in current_balances_dict.items() if v > 90000}
-low_balance_accounts = {k: v for k, v in current_balances_dict.items() if v < 50000}
+high_balance_accounts = {k: v for k, v in current_balances_dict.items() if v > 88000}
+low_balance_accounts = {k: v for k, v in current_balances_dict.items() if v < 85000}
 
 for high_acc, high_bal in high_balance_accounts.items():
     for low_acc, low_bal in low_balance_accounts.items():
